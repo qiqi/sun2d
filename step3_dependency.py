@@ -29,4 +29,5 @@ for i_level in range(33):
 savetxt('outputs/volume.txt', list(nodes.items()), fmt='%d')
 
 A = sparse.csr_matrix((ones(len(connectivity[0])), connectivity))
+A.setdiag(0)
 savetxt('outputs/connectivity.txt', transpose(sparse.find(A)), fmt='%d')
